@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.5rem 0;
+}
+
+.a {
+  text-decoration: none;
+  transition: all 250ms ease-in-out;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.a:hover {
+  transform: scale(105%);
+}
+
+.a:active {
+  transform: scale(90%);
+}
+
+.span {
+  color: #b4b4b4;
+  font-size: 1.25rem;
+}
+
+.div {
+  display: flex;
+  gap: 1rem;
+}
+
+.mainLink {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.currentLink {
+  color: white;
+  font-weight: 800;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  padding: 1rem 0;
+}

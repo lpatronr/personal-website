@@ -1,0 +1,111 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 6rem 0;
+}
+
+/* TOP */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 1rem;
+
+    > div {
+      text-align: start;
+      align-items: flex-start;
+    }
+  }
+}
+
+.title {
+  color: #b0b7bf;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.icon {
+  transition: all 250ms ease-in-out;
+
+  :hover {
+    fill: white;
+  }
+}
+
+/* BODY */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 2rem;
+  gap: 1rem;
+
+  p {
+    max-width: 40rem;
+    text-align: justify;
+  }
+
+  > h3 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  > div {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p,
+  h6 {
+    text-align: center;
+  }
+}
+
+.languagesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+
+  p {
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    gap: 4rem;
+  }
+}

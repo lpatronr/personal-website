@@ -1,0 +1,31 @@
+.a {
+  padding: 1rem;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+
+  h6 {
+    font-weight: bold;
+  }
+}
+
+.a:hover {
+  transform: scale(1.05);
+  background-color: #f5f5f5;
+}
+
+.videoTag {
+  font-size: 0.8rem;
+  color: rgb(224, 80, 80);
+  padding-left: 0.5rem;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #b0b7bf;
+}
+
+.button {
+  color: blue;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
