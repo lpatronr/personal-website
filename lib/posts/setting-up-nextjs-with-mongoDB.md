@@ -142,7 +142,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     case 'POST':
       try {
         const { username } = req.body;
-        if (typeof cc !== 'string' || !username.length >= 3 || !username.length <= 12 || /^[A-Za-z0-9]+$/.test(username)) return res.status(400).json({ message: 'Invalid username' });
+        if (typeof username !== 'string' || !username.length >= 3 || !username.length <= 12 || /^[A-Za-z0-9]+$/.test(username)) return res.status(400).json({ message: 'Invalid username' });
 
         const userAlreadyExists = await getUser();
         if (userAlreadyExists) return res.status(400).json({ message: 'User already exists });
