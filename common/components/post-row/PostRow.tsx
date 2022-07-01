@@ -15,10 +15,13 @@ export default function PostRow({ post }: { post: Post }): JSX.Element {
   });
 
   return (
-    <Link href={post.type === 'video' ? post.content.trim() : `/post/${post.id}`}>
+    <Link href={post.type !== 'blog' ? post.content.trim() : `/post/${post.id}`}>
       <a className={styles.a}>
         <h6>
-          {title} {post.type === 'video' && <span className={styles.videoTag}>VIDEO</span>}
+          {title}{' '}
+          {post.type !== 'blog' && (
+            <span className={styles.videoTag}>{post.type.toUpperCase()}</span>
+          )}
         </h6>
         <p className={styles.date}>{publishedAt}</p>
         <p>{post.description}</p>

@@ -10,7 +10,7 @@ type PostsData = {
   description: string;
   date: Date;
   content: string;
-  type: string;
+  type: 'blog' | 'video' | 'course';
 };
 
 export type Post = {
@@ -18,7 +18,7 @@ export type Post = {
   description: string;
   date: string;
   content: string;
-  type: string;
+  type: 'blog' | 'video' | 'course';
 };
 
 const directory: string = path.join(process.cwd(), 'lib', 'posts');
