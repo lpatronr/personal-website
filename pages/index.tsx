@@ -20,7 +20,7 @@ const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticPr
       <Head>
         <title>Lucas - Home</title>
         <meta name='description' content='Personal website' />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/favicon/favicon.ico' />
       </Head>
 
       <section className={styles.main}>
