@@ -20,7 +20,9 @@ export default function PostRow({ post }: { post: Post }): JSX.Element {
         <h6>
           {title}{' '}
           {post.type !== 'blog' && (
-            <span className={styles.videoTag}>{post.type.toUpperCase()}</span>
+            <span className={post.type === 'video' ? styles.videoTag : styles.courseTag}>
+              {post.type.toUpperCase()}
+            </span>
           )}
         </h6>
         <p className={styles.date}>{publishedAt}</p>
