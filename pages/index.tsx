@@ -15,6 +15,10 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // validate string to be minimum 3 characters and maximum 12 characters with only A-Za-z0-9 characters
+  const isValidTitle = (username: string) => {
+    return username.length >= 3 && username.length <= 12 && /^[A-Za-z0-9]+$/.test(username);
+  };
   return (
     <MainLayout>
       <Head>
@@ -25,7 +29,7 @@ const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticPr
 
       <section className={styles.main}>
         <h1>Latest Updates</h1>
-        <p className={styles.message}>Welcome 👋!</p>
+        <p className={styles.message}>Welcome 👋</p>
 
         <div className={styles.grid}>
           {allPosts.map((post: Post) => (
