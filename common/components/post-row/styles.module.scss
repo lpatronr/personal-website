@@ -1,17 +1,21 @@
 .a {
   padding: 1rem;
   transition: all 250ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
 
   h6 {
     font-weight: bold;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1rem;
   }
 }
 
 .a:hover {
   transform: scale(1.05);
   background-color: #f5f5f5;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .a:active {
