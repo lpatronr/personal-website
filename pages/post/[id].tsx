@@ -2,9 +2,9 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Router from 'next/router';
 import { useEffect } from 'react';
+import Blog from '../../common/components/post/blog';
 import MainLayout from '../../common/layouts/MainLayout';
 import { getAllPostsIds, getPostFromId } from '../../lib/utils/posts';
-import styles from '../../styles/[id].module.scss';
 
 export async function getStaticPaths() {
   const paths: { params: { id: string } }[] = getAllPostsIds();
@@ -45,23 +45,9 @@ export default function Post({
         <title>{`Lucas - ${title}`}</title>
       </Head>
 
-      {post && post.type === 'blog' && (
-        <div className={styles.container}>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.date}>
-            {new Date(post.date).toLocaleDateString('us', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
-            })}
-          </p>
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        </div>
-      )}
+      {post && post.type === 'blog' && <Blog post={post} title={title} />}
       {post && post.type === 'video' && (
-        <div className={styles.container}>
-          <h1>{post.title}</h1>
-        </div>
+        <h1 style={{ textAlign: 'center', padding: '8rem' }}>What are you doing here?</h1>
       )}
     </MainLayout>
   );
