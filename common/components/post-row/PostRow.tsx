@@ -22,7 +22,7 @@ export default function PostRow({ post }: { post: Post }): JSX.Element {
         </h6>
         <p className={styles.date}>{publishedAt}</p>
         <p>{post.description}</p>
-        <p className={styles.button}>Read more 👉</p>
+        <p className={styles.button}>Read more</p>
       </a>
     </Link>
   );
