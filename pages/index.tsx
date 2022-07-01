@@ -25,7 +25,7 @@ const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticPr
 
       <section className={styles.main}>
         <h1>Latest Updates</h1>
-        <p>Hello! This is my personal space where I post blogs about anything.</p>
+        <p>Welcome 👋!</p>
 
         <div className={styles.grid}>
           {allPosts.map((post: Post) => (
