@@ -93,7 +93,7 @@ export function createUser(username: string): Prisma.Prisma__UserClient<User> {
   return prisma.user.create({
     data: {
       username,
-    }
+    },
   });
 }
 
@@ -114,7 +114,7 @@ Navigate to `pages/api/hello.ts` and rename it to `user.ts`. We can now create o
 import { User } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import NextCors from 'nextjs-cors';
-import { createUser, getUser} from '../../prisma/user';
+import { createUser, getUser } from '../../prisma/user';
 ```
 
 For this, notice the use of `NextCors`. Where did that come from? Well, when you deploy your application, CORS will not allow you to access your endpoints. So for this, make sure to add `NextCors`:
@@ -137,16 +137,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     origin: '*',
     optionsSuccessStatus: 200,
   });
-  
+
   switch (req.method) {
     case 'POST':
       try {
         const { username } = req.body;
         if (typeof cc !== 'string' || !username.length >= 3 || !username.length <= 12 || /^[A-Za-z0-9]+$/.test(username)) return res.status(400).json({ message: 'Invalid username' });
-        
+
         const userAlreadyExists = await getUser();
         if (userAlreadyExists) return res.status(400).json({ message: 'User already exists });
-        
+
         await createUser(username);
         return res.status(200).json({ message: 'User created' });
       } catch (e) {
@@ -194,7 +194,7 @@ export default function Form(): JSX.Element {
       <input type='text' placeholder='user' value={username} onChange={handleChange} />
       <button type='submit'>Create user</button>
     </form>
-  );  
+  );
 }
 ```
 

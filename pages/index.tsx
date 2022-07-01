@@ -15,10 +15,6 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // validate string to be minimum 3 characters and maximum 12 characters with only A-Za-z0-9 characters
-  const isValidTitle = (username: string) => {
-    return username.length >= 3 && username.length <= 12 && /^[A-Za-z0-9]+$/.test(username);
-  };
   return (
     <MainLayout>
       <Head>

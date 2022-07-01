@@ -1,5 +1,5 @@
 .container {
-  max-width: 40rem;
+  max-width: 50rem;
   margin: 3rem auto;
   padding: 0 1.5rem;
 }
@@ -23,5 +23,11 @@
 
   @media (min-width: 768px) {
     text-align: start;
+  }
+}
+
+.p {
+  p {
+    margin: 1rem 0;
   }
 }

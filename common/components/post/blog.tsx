@@ -17,7 +17,7 @@ export default function Blog({ post, title }: Props): JSX.Element {
           year: 'numeric',
         })}
       </p>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className={styles.p} dangerouslySetInnerHTML={{ __html: post.content }} />
     </div>
   );
 }
