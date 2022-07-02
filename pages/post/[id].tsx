@@ -2,7 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Router from 'next/router';
 import { useEffect } from 'react';
-import Blog from '../../common/components/post/blog';
+import Blog from '../../common/components/post/post';
 import MainLayout from '../../common/layouts/MainLayout';
 import { getAllPostsIds, getPostFromId } from '../../lib/utils/posts';
 
