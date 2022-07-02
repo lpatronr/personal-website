@@ -2,7 +2,7 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head';
 import Posts from '../common/components/posts/posts';
 import MainLayout from '../common/layouts/MainLayout';
-import { getPosts, Post } from '../lib/utils/posts';
+import { getPosts } from '../lib/utils/posts';
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPosts = getPosts();
