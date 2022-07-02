@@ -59,4 +59,6 @@ a {
   -ms-user-select: none;
   user-select: none;
   text-decoration: none;
+  color: #0ea5e9;
+  font-weight: bold;
 }
