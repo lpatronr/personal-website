@@ -4,12 +4,6 @@ import { Post } from '../../../lib/utils/posts';
 import styles from './styles.module.scss';
 
 export function PostRow({ post }: { post: Post }): JSX.Element {
-  const title = post.id
-    .replace(/-/g, ' ')
-    .split(' ')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-
   const publishedAt = new Date(post.date).toLocaleDateString('us', {
     day: 'numeric',
     month: 'short',
@@ -38,7 +32,8 @@ export function PostRow({ post }: { post: Post }): JSX.Element {
     <Link href={post.type !== 'blog' ? post.content.trim() : `/post/${post.id}`}>
       <a className={styles.a}>
         <h6>
-          {title} <span className={[styles.tag, color].join(' ')}>{post.type.toUpperCase()}</span>
+          {post.title}{' '}
+          <span className={[styles.tag, color].join(' ')}>{post.type.toUpperCase()}</span>
         </h6>
         <p className={styles.date}>{publishedAt}</p>
         <p>{post.description}</p>
