@@ -30,7 +30,7 @@ export default function Posts({ posts }: Props): JSX.Element {
       <p className={styles.message}>Welcome 👋</p>
 
       <div className={styles.buttonsContainer}>
-        <FilterButton
+        {/* <FilterButton
           selectedPost={selectedPost}
           handleSelectPost={handleSelectPost}
           filter={'all'}
@@ -49,7 +49,7 @@ export default function Posts({ posts }: Props): JSX.Element {
           selectedPost={selectedPost}
           handleSelectPost={handleSelectPost}
           filter={'course'}
-        />
+        /> */}
       </div>
 
       <div className={styles.grid}>
