@@ -35,9 +35,10 @@ export default function PostPage({
 
   const title: string = post.id
     .replace(/-/g, ' ')
-    .replace(/(\w)(\w*)/g, function (_: string, g1: string, g2: string) {
-      return g1.toUpperCase() + g2.toLowerCase();
-    });
+    .replace(
+      /(\w)(\w*)/g,
+      (_: string, g1: string, g2: string) => g1.toUpperCase() + g2.toLowerCase(),
+    );
 
   return (
     <MainLayout>
