@@ -1,5 +1,5 @@
 ---
-title: 'Fixing Hydration issues in Next.js'
+title: 'Fixing Hydration Issues in Next.JS'
 description: Learn how to avoid hydration issues when employing SSR in Next.js.
 date: '2022-07-02'
 type: 'blog'
@@ -33,7 +33,7 @@ I conducted a Google search and came across [this fantastic thread](https://gith
 const [isSSR, setIsSSR] = useState(true);
 
 useEffect(() => {
-	setIsSSR(false);
+  setIsSSR(false);
 }, []);
 ```
 
@@ -49,7 +49,7 @@ It's pretty simple. Instead of exporting default your component, create another 
 import dynamic from 'next/dynamic';
 
 export function MyComponent(): JSX.Element {
-  return <></>
+  return <></>;
 }
 
 export default dynamic(() => Promise.resolve(MyComponent), { ssr: false });

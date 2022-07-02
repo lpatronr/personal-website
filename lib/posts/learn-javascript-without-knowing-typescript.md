@@ -1,5 +1,5 @@
 ---
-title: 'Learn JavaScript without knowing TypeScript'
+title: 'Learn Javascript Without Knowing Typescript'
 description: A full 16-hour course on JavaScript that teaches the principles of TypeScript for absolute beginners.
 date: '2022-06-28'
 type: 'course'
