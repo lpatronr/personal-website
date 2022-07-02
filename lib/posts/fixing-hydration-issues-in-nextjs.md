@@ -49,7 +49,7 @@ It's pretty simple. Instead of exporting default your component, create another 
 import dynamic from 'next/dynamic';
 
 export function MyComponent(): JSX.Element {
-  return <></>;
+  return <>{new Date().toLocaleDateString()}</>;
 }
 
 export default dynamic(() => Promise.resolve(MyComponent), { ssr: false });
