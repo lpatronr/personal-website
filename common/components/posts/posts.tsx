@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Post } from '../../../lib/utils/posts';
 import FilterButton from '../buttons/FilterButton';
 import PostRow from '../post-row/PostRow';
