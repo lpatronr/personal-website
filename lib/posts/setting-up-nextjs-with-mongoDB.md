@@ -1,5 +1,5 @@
 ---
-title: 'Setting up Next.js With MongoDB'
+title: 'Setting up Next.JS With MongoDB'
 description: Learn how to set up MongoDB via Next.js integrated API routes and Prisma ORM.
 date: '2022-06-30'
 type: 'blog'
