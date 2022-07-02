@@ -1,5 +1,7 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head';
+import { useState } from 'react';
+import FilterButton from '../common/components/buttons/FilterButton';
 import PostRow from '../common/components/post-row/PostRow';
 import MainLayout from '../common/layouts/MainLayout';
 import { getPosts, Post } from '../lib/utils/posts';
@@ -15,6 +17,21 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const posts = allPosts as Post[];
+
+  const [selectedPost, setSelectedPost] = useState<Post['type'] | 'all'>('all');
+
+  function handleSelectPost(post: Post['type'] | 'all') {
+    setSelectedPost(post);
+  }
+
+  const filteredPosts: Post[] = posts.filter((post: Post) => {
+    if (selectedPost === 'all') {
+      return true;
+    }
+    return post.type === selectedPost;
+  });
+
   return (
     <MainLayout>
       <Head>
@@ -27,10 +44,35 @@ const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticPr
         <h1>Latest Updates</h1>
         <p className={styles.message}>Welcome 👋</p>
 
+        <div className={styles.buttonsContainer}>
+          <FilterButton
+            selectedPost={selectedPost}
+            handleSelectPost={handleSelectPost}
+            filter={'all'}
+          />
+          <FilterButton
+            selectedPost={selectedPost}
+            handleSelectPost={handleSelectPost}
+            filter={'project'}
+          />
+          <FilterButton
+            selectedPost={selectedPost}
+            handleSelectPost={handleSelectPost}
+            filter={'blog'}
+          />
+          <FilterButton
+            selectedPost={selectedPost}
+            handleSelectPost={handleSelectPost}
+            filter={'course'}
+          />
+        </div>
+
         <div className={styles.grid}>
-          {allPosts.map((post: Post) => (
-            <PostRow key={post.id} post={post} />
-          ))}
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map((post: Post) => <PostRow key={post.id} post={post} />)
+          ) : (
+            <p>Whoops!</p>
+          )}
         </div>
       </section>
     </MainLayout>
