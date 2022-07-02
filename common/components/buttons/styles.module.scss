@@ -1,0 +1,45 @@
+.button {
+  all: unset;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffffff;
+  // add shadow to text
+  text-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:not(:hover) {
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:active {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+.all {
+  background-color: #8b5cf6;
+}
+
+.blog {
+  background-color: #06b6d4;
+}
+
+.video {
+  background-color: #f43f5e;
+}
+
+.course {
+  background-color: #22c55e;
+}
+
+.project {
+  background-color: #f97316;
+}
