@@ -26,7 +26,7 @@ export default function Posts({ posts }: Props): JSX.Element {
 
   return (
     <section className={styles.main}>
-      <h1>Latest Updates</h1>
+      <h1 className={styles.mainTitle}>Latest Updates</h1>
       <p className={styles.message}>Welcome 👋</p>
 
       <div className={styles.buttonsContainer}>
