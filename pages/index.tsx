@@ -14,7 +14,6 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const posts = allPosts as Post[];
   return (
     <MainLayout>
       <Head>
@@ -23,7 +22,7 @@ const Home: NextPage = ({ allPosts }: InferGetStaticPropsType<typeof getStaticPr
         <link rel='icon' href='/favicon/favicon.ico' />
       </Head>
 
-      <Posts posts={posts} />
+      <Posts posts={allPosts} />
     </MainLayout>
   );
 };

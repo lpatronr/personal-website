@@ -53,8 +53,8 @@ export default function Posts({ posts }: Props): JSX.Element {
       </div>
 
       <div className={styles.grid}>
-        {posts.length > 0 ? (
-          posts.map((post: Post) => <PostRow key={post.id} post={post} />)
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map((post: Post) => <PostRow key={post.id} post={post} />)
         ) : (
           <p>Whoops!</p>
         )}
