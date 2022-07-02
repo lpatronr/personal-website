@@ -10,15 +10,11 @@ type PostsData = {
   description: string;
   date: Date;
   content: string;
-  type: 'blog' | 'video' | 'course';
+  type: 'blog' | 'video' | 'course' | 'project';
 };
 
-export type Post = {
-  id: string;
-  description: string;
+export type Post = Omit<PostsData, 'date'> & {
   date: string;
-  content: string;
-  type: 'blog' | 'video' | 'course';
 };
 
 const directory: string = path.join(process.cwd(), 'lib', 'posts');
