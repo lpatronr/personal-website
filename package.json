@@ -12,7 +12,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write .",
     "prepare": "npx husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx --no -- commitlint --edit $1"
+    }
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
