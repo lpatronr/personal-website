@@ -22,16 +22,25 @@
   transform: scale(0.9);
 }
 
-.videoTag {
+.tag {
   font-size: 0.8rem;
-  color: #f43f5e;
   padding-left: 0.5rem;
 }
 
-.courseTag {
-  font-size: 0.8rem;
+.blog {
+  color: #06b6d4;
+}
+
+.video {
+  color: #f43f5e;
+}
+
+.course {
   color: #22c55e;
-  padding-left: 0.5rem;
+}
+
+.project {
+  color: #f97316;
 }
 
 .date {

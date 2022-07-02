@@ -8,22 +8,36 @@ export default function PostRow({ post }: { post: Post }): JSX.Element {
     .split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
+
   const publishedAt = new Date(post.date).toLocaleDateString('us', {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
   });
 
+  let color = styles.tag;
+  switch (post.type) {
+    case 'blog':
+      color = styles.blog;
+      break;
+    case 'video':
+      color = styles.video;
+      break;
+    case 'course':
+      color = styles.course;
+      break;
+    case 'project':
+      color = styles.project;
+      break;
+    default:
+      break;
+  }
+
   return (
     <Link href={post.type !== 'blog' ? post.content.trim() : `/post/${post.id}`}>
       <a className={styles.a}>
         <h6>
-          {title}{' '}
-          {post.type !== 'blog' && (
-            <span className={post.type === 'video' ? styles.videoTag : styles.courseTag}>
-              {post.type.toUpperCase()}
-            </span>
-          )}
+          {title} <span className={[styles.tag, color].join(' ')}>{post.type.toUpperCase()}</span>
         </h6>
         <p className={styles.date}>{publishedAt}</p>
         <p>{post.description}</p>
