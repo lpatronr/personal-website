@@ -18,7 +18,7 @@ export function Blog({ post, title }: Props): JSX.Element {
           year: 'numeric',
         })}
       </p>
-      <div className={styles.p} dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className={styles.markdown} dangerouslySetInnerHTML={{ __html: post.content }} />
     </div>
   );
 }
