@@ -1,8 +1,9 @@
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { Post } from '../../../lib/utils/posts';
 import styles from './styles.module.scss';
 
-export default function PostRow({ post }: { post: Post }): JSX.Element {
+export function PostRow({ post }: { post: Post }): JSX.Element {
   const title = post.id
     .replace(/-/g, ' ')
     .split(' ')
@@ -46,3 +47,5 @@ export default function PostRow({ post }: { post: Post }): JSX.Element {
     </Link>
   );
 }
+
+export default dynamic(() => Promise.resolve(PostRow), { ssr: false });

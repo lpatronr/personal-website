@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import { Post } from '../../../lib/utils/posts';
 import styles from './styles.module.scss';
 
@@ -6,7 +7,7 @@ type Props = {
   title: string;
 };
 
-export default function Blog({ post, title }: Props): JSX.Element {
+export function Blog({ post, title }: Props): JSX.Element {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
@@ -21,3 +22,5 @@ export default function Blog({ post, title }: Props): JSX.Element {
     </div>
   );
 }
+
+export default dynamic(() => Promise.resolve(Blog), { ssr: false });
