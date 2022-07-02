@@ -18,7 +18,14 @@ const About: NextPage = () => {
         </Head>
 
         <div className={styles.header}>
-          <Image draggable={'false'} src={profile} width={205} height={205} alt={'profile'} />
+          <Image
+            placeholder='blur'
+            draggable={'false'}
+            src={profile}
+            width={205}
+            height={205}
+            alt={'profile'}
+          />
 
           <div>
             <div>
