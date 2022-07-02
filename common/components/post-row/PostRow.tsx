@@ -31,7 +31,7 @@ export function PostRow({ post }: { post: Post }): JSX.Element {
   return (
     <Link href={post.type !== 'blog' ? post.content.trim() : `/post/${post.id}`}>
       <a className={styles.a}>
-        <h6>
+        <h6 className={styles.title}>
           {post.title}{' '}
           <span className={[styles.tag, color].join(' ')}>{post.type.toUpperCase()}</span>
         </h6>

@@ -3,9 +3,14 @@
   transition: all 250ms ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
+  text-align: center;
 
   h6 {
     font-weight: bold;
+  }
+
+  @media (min-width: 768px) {
+    text-align: start;
   }
 
   @media (min-width: 1024px) {
@@ -20,6 +25,16 @@
 
 .a:active {
   transform: scale(0.9);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .tag {
