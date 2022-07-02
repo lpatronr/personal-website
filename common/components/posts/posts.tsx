@@ -30,7 +30,7 @@ export default function Posts({ posts }: Props): JSX.Element {
       <p className={styles.message}>Welcome 👋</p>
 
       <div className={styles.buttonsContainer}>
-        {/* <FilterButton
+        <FilterButton
           selectedPost={selectedPost}
           handleSelectPost={handleSelectPost}
           filter={'all'}
@@ -49,12 +49,12 @@ export default function Posts({ posts }: Props): JSX.Element {
           selectedPost={selectedPost}
           handleSelectPost={handleSelectPost}
           filter={'course'}
-        /> */}
+        />
       </div>
 
       <div className={styles.grid}>
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map((post: Post) => <PostRow key={post.id} post={post} />)
+        {posts.length > 0 ? (
+          posts.map((post: Post) => <PostRow key={post.id} post={post} />)
         ) : (
           <p>Whoops!</p>
         )}
