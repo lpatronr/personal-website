@@ -10,6 +10,7 @@ type PostsData = {
   description: string;
   date: Date;
   content: string;
+  title: string;
   type: 'blog' | 'video' | 'course' | 'project';
 };
 
@@ -32,6 +33,7 @@ export function getPosts(): Post[] {
       description: data.description,
       date: new Date(data.date),
       type: data.type,
+      title: data.title,
       content,
     });
   });
@@ -57,6 +59,7 @@ export async function getPostFromId(id: string): Promise<Post> {
   const result = await remark().use(html, { sanitize: false }).use(remarkPrism).process(content);
   return {
     id,
+    title: data.title,
     description: data.description,
     date: new Date(data.date).toISOString(),
     type: data.type,
