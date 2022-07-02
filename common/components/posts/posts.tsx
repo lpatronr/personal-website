@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Post } from '../../../lib/utils/posts';
 import FilterButton from '../buttons/FilterButton';
 import PostRow from '../post-row/PostRow';
@@ -10,17 +10,19 @@ type Props = {
 
 export default function Posts({ posts }: Props): JSX.Element {
   const [selectedPost, setSelectedPost] = useState<Post['type'] | 'all'>('all');
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
 
-  function handleSelectPost(post: Post['type'] | 'all') {
-    setSelectedPost(post);
+  function handleSelectPost(selectedType: Post['type'] | 'all') {
+    setSelectedPost(selectedType);
+    setFilteredPosts(
+      posts.filter(({ type }: Post) => {
+        if (selectedType === 'all') {
+          return true;
+        }
+        return type === selectedType;
+      }),
+    );
   }
-
-  const filteredPosts: Post[] = posts.filter((post: Post) => {
-    if (selectedPost === 'all') {
-      return true;
-    }
-    return post.type === selectedPost;
-  });
 
   return (
     <section className={styles.main}>
