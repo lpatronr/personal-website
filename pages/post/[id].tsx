@@ -2,7 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Router from 'next/router';
 import { useEffect } from 'react';
-import Blog from '../../common/components/post/post';
+import Post from '../../common/components/post/post';
 import MainLayout from '../../common/layouts/MainLayout';
 import { getAllPostsIds, getPostFromId } from '../../lib/utils/posts';
 
@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default function Post({
+export default function PostPage({
   post,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Post({
         <title>{`Lucas - ${title}`}</title>
       </Head>
 
-      {post && post.type === 'blog' && <Blog post={post} title={title} />}
+      {post && post.type === 'blog' && <Post post={post} title={title} />}
       {post && post.type === 'video' && (
         <h1 style={{ textAlign: 'center', padding: '8rem' }}>What are you doing here?</h1>
       )}
