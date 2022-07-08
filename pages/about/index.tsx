@@ -74,8 +74,8 @@ const About: NextPage = () => {
             <div>
               <h6>Backend Technologies</h6>
               <p>
-                Spring / Spring Boot, Node.js, Express.js, Nest.js, Relational Databases (NoSQL),
-                Non-Relational Databases (MongoDB), Prisma, and Mongoose.
+                Node.js, Express.js, Nest.js, Relational Databases (PostgreSQL), Non-Relational
+                Databases (MongoDB), Prisma, and Mongoose.
               </p>
             </div>
 
