@@ -47,19 +47,21 @@ const About: NextPage = () => {
         <div className={styles.body}>
           <h3>About Me</h3>
           <p>
-            I began my journey into software development as a Web Developer and Designer by
-            tinkering around with banners, wallpapers and forum signatures. Furthermore, I have
-            personal and e-commerce websites for friends and small business owners utilizing popular
-            web technologies. When Web Development became stale (...before JavaScript was a thing
-            and made Web Development exciting again) I took my career in another direction by
-            obtaining a formal education in Computer Science where I learned object-oriented
-            programming languages. With these newly acquired skills I was able to create dynamic,
-            interactive web and mobile applications. My recent professional experience was spent at
-            IBM Security as a Staff Software Engineer developing their Identity and Access
-            Management software. These days I am currently working on developing my iOS app,
-            DokoDemo, which helps users find all Japanese-related events, food and news in their
-            local area. I also recently took on a full-time job in Silicon Valley as a Software
-            Engineer and have been actively learning Python and Django.
+            I began my journey into the world of programming and developing applications when I was
+            little. I got introduced to a book titled &quot;Programming in Basic&quot; and made an
+            effort to follow through. Needless to say, my motivation plummeted... Heh, that was
+            expected. I decided I wanted to start with a higher-level language. A period of almost 2
+            years was spent with Java, where during that time, I made the switch from C++ to C# and
+            back to Java, as my interest in using new paradigms was always lurking. Even though I
+            continued to solely solve algorithms and create basic programs in the terminal, I hoped
+            there was some way for me to be able to see an application behind my code. Not being a
+            fan of JavaScript due to its lack of a type system, I decided to investigate any
+            alternative. In the following weeks, I developed a deep affection for TypeScript. The
+            simplicity of the language, with both a great, broad ecosystem and a lovely syntax, made
+            the prospect of developing large, complex, server-side applications with little ceremony
+            something I was eager to try. Also, being able to seamlessly switch between different
+            backend and frontend technologies in a workflow was one of the main selling points for
+            me. Ever since, my devotion for web development has only grown.
           </p>
 
           <h3>Technical Skills</h3>
